@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit coffee price{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <h1>Edit price</h1>
+        <h2>Cafe Name: {{ cafe.name }}</h2>
+        <h2>Current price: {{ cafe.coffee_price }}</h2>
+        <form name="editForm" action="{{ url_for('patch_new_price') }}" method="post" >
+            <div>
+                <input hidden="hidden" name="id" value="{{cafe.id}}">
+              <input name="new_price" placeholder="New Price" required />
+            </div>
+            <br />
+            <button
+              id="submitButton" type="submit" >
+              Change rating </button>
+</form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

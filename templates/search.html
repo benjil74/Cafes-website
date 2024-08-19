@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Search cafe by location{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <h1>Search cafe by location</h1>
+
+        <form name="editForm" action="{{ url_for('get_cafe_at_location') }}" method="POST" >
+            <div>
+              <input name="location" placeholder="Location" required />
+            </div>
+            <br />
+            <button
+              id="submitButton" type="submit" >
+              Search </button>
+</form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
